@@ -1,6 +1,6 @@
-const endpoint = 'https://www.googleapis.com/youtube/v3/search';
 const axios = require('axios');
 const { randomNumber } = require('./helpers');
+const endpoint = 'https://www.googleapis.com/youtube/v3/search';
 
 module.exports = getVideo = term => {
   return axios({
@@ -16,8 +16,9 @@ module.exports = getVideo = term => {
   })
     .then(data => {
       const videos = data.data.items;
-      const randomI = randomNumber(videos.length);
-      return `http://youtu.be/${videos[randomI].id.videoId}`;
+      const random = randomNumber(videos.length);
+
+      return `http://youtu.be/${videos[random].id.videoId}`;
     })
     .catch(e => console.log(e));
 };

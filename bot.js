@@ -15,14 +15,13 @@ const Twitter = new twit(config);
 const lyrics = getLyrics();
 
 const tweetLyric = () => {
-  const lyric = lyrics[randomNumber(lyrics.length)];
+  const random = randomNumber(lyrics.length);
+  const lyric = lyrics[random];
 
   getVideo(lyric.song).then(response => {
+    const songHash = lyric.song.replace(/\s/g, '');
     const tweet = {
-      status: `${lyric.lyric}\n${response} #ToriAmos #${lyric.song.replace(
-        /\s/g,
-        ''
-      )}`
+      status: `${lyric.lyric}\n${response} #ToriAmos #${songHash}`
     };
 
     Twitter.post('statuses/update', tweet, (err, data, response) => {
