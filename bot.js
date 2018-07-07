@@ -33,5 +33,7 @@ const tweetLyric = () => {
   });
 };
 
-// setInterval(tweetLyric, 24 * 60 * 60 * 1000);
-setInterval(tweetLyric, 2 * 60 * 1000);
+tweetLyric();
+
+// Tweet once every 24 hours (until I set up Heroku tasks)
+setInterval(tweetLyric, 24 * 60 * 60 * 1000);
