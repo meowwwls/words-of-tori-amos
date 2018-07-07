@@ -18,7 +18,7 @@ When `bot.js` runs and `tweetLyric` is called, the first thing to do is grab a n
 
 ## Getting the Video
 
-In `youtube.js`, a request is made using **axios** to the **YouTube API**, sending the song title from the lyric object that has been randomly selected. The `getVideo` function in `youtube.js` returns a Promise that when resolved, returns a random video from the array of the 10 most relevant results.
+In `youtube.js`, a request is made using **axios** to the **YouTube API**, sending the song title from the lyric object that has been randomly selected. The `getVideo` function in `youtube.js` returns a Promise that when resolved, returns a random video from the array of the 3 most relevant results.
 
 ## Tweeting the Lyric & Video
 

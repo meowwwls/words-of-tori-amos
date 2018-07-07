@@ -10,7 +10,7 @@ module.exports = getVideo = term => {
       key: process.env.YOUTUBE_KEY,
       q: `Tori Amos ${term}`,
       part: 'snippet',
-      maxResults: 10,
+      maxResults: 3,
       type: 'video'
     }
   })
