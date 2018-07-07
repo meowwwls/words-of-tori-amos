@@ -1,5 +1,8 @@
-// const config = require('./config');
 const twit = require('twit');
+const getVideo = require('./youtube');
+const { getLyrics } = require('./lyricadder/lyrics');
+const { randomNumber } = require('./helpers');
+
 const config = {
   consumer_key: process.env.consumer_key,
   consumer_secret: process.env.consumer_secret,
@@ -9,11 +12,7 @@ const config = {
 
 const Twitter = new twit(config);
 
-const { getLyrics } = require('./lyricadder/lyrics');
 const lyrics = getLyrics();
-const getVideo = require('./youtube');
-const { randomNumber } = require('./helpers');
-
 const lyric = lyrics[randomNumber(lyrics.length)];
 
 const tweetLyric = () => {
@@ -31,39 +30,7 @@ const tweetLyric = () => {
       }
     });
   });
-  // const video = `https://www.youtube.com/watch?v=${videoId}`;
 };
 
-// const tweetLyric = () => {
-//   const video = `https://www.youtube.com/watch?v=${videoId}`;
-//   const tweet = {
-//     status: `${lyric.lyric} \n ${video} #ToriAmos #${lyric.song.replace(
-//       /\s/g,
-//       ''
-//     )}`
-//   };
-
-//   Twitter.post('statuses/update', tweet, (err, data, response) => {
-//     if (err) {
-//       console.log(err);
-//     }
-//   });
-// };
-
-tweetLyric();
-// getVideo(term).then(response => {
-//   const video = `https://www.youtube.com/watch?v=${response}`;
-
-//   const tweet = {
-//     status: `${lyric.lyric} \n ${video} #ToriAmos #${lyric.song.replace(
-//       /\s/g,
-//       ''
-//     )}`
-//   };
-
-//   Twitter.post('statuses/update', tweet, (err, data, response) => {
-//     if (err) {
-//       console.log(err);
-//     }
-//   });
-// });
+// setInterval(tweetLyric, 24 * 60 * 60 * 1000);
+setInterval(tweetLyric, 2 * 60 * 1000);
