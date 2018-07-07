@@ -13,9 +13,10 @@ const config = {
 const Twitter = new twit(config);
 
 const lyrics = getLyrics();
-const lyric = lyrics[randomNumber(lyrics.length)];
 
 const tweetLyric = () => {
+  const lyric = lyrics[randomNumber(lyrics.length)];
+
   getVideo(lyric.song).then(response => {
     const tweet = {
       status: `${lyric.lyric}\n${response} #ToriAmos #${lyric.song.replace(
