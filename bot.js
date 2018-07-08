@@ -33,4 +33,3 @@ const tweetLyric = () => {
 };
 
 tweetLyric();
-process.exit(0);
