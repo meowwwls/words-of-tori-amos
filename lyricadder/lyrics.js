@@ -13,11 +13,8 @@ const saveLyrics = lyrics => {
   fs.writeFileSync('./data/lyrics.json', JSON.stringify(lyrics));
 };
 
-const sortLyrics = () => {
-  const sorted = [...getLyrics()].sort((a, b) =>
-    a.album.localeCompare(b.album)
-  );
-
+const sortLyrics = lyrics => {
+  const sorted = [...lyrics].sort((a, b) => a.album.localeCompare(b.album));
   saveLyrics(sorted);
 };
 
@@ -47,9 +44,7 @@ const addLyric = ({ lyric, song, album }) => {
 
   if (duplicateLyrics.length === 0) {
     lyrics.push(newLyric);
-    sortLyrics();
-
-    return newLyric;
+    sortLyrics(lyrics);
   }
 };
 
