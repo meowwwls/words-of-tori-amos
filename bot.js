@@ -14,7 +14,7 @@ const Twitter = new twit(config);
 
 const lyrics = getLyrics();
 
-const tweetLyric = () => {
+module.exports = tweetLyric = () => {
   const random = randomNumber(lyrics.length);
   const lyric = lyrics[random];
 
@@ -31,5 +31,3 @@ const tweetLyric = () => {
     });
   });
 };
-
-tweetLyric();
