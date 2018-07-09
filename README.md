@@ -2,8 +2,6 @@ _Work in progress._
 
 # Words of Tori Amos – A Tori Amos Lyrics Twitter Bot
 
-[Twitter account](https://twitter.com/wordsoftoriamos)
-
 As a fun way of learning more about Node, the YouTube API, the Twit package for dealing with the Twitter API, Heroku, and Twitter Bots in general, I decided to make a bot that tweets lyrics and videos of my favorite musician, Tori Amos.
 
 ## Adding New Lyrics
